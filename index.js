@@ -1,7 +1,13 @@
-function takeANumber(list, name){
-  list.push(name)
+function takeANumber(list){
+  if (list.length > 0){
+    num = list[-1]
+    list.push(num+1)
+  }
+  else{
+    list.push(1)
+  }
   
- return `Welcome, ${name}. You are number ${list.length} in line.`
+ return `Welcome! You are number ${list[-1]} in line.`
 }
 
 function currentLine(list){
@@ -26,10 +32,10 @@ function currentLine(list){
 
 function nowServing(list){
   if (list.length > 0){
-    name = list[0]
+    num = list[0]
     list.shift()
   
-    return `Currently serving ${name}.`
+    return `Currently serving ${num}.`
   }
   else{
     return "There is nobody waiting to be served!"
